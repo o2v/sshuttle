@@ -142,7 +142,7 @@ def connect(ssh_cmd, rhostport, python, stderr, add_cmd_delimiter, remote_shell,
             pycmd = '%s -c %s' % (python or 'python', pyscript)
         else:  # posix shell expected
             if python:
-                pycmd = "%s -c \"%s\"" % (python, pyscript)
+                pycmd = "\"%s\" -c \"%s\"" % (python, pyscript)
             else:
                 # By default, we run the following code in a shell.
                 # However, with restricted shells and other unusual
